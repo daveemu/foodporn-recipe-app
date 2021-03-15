@@ -34,9 +34,11 @@
                 </ul>
                 <a class="waves-effect waves-light btn" href="{{ url()->previous() }}">Go Back</a>
 
+                @auth
                 @if ($recipe->ownedBy(auth()->user()))
                     <a class="waves-effect waves-light btn red" onclick="document.getElementById('deleteform').submit();" href="javascript:;">Delete Recipe</a>
                 @endif
+                @endauth
 
 
             </div>
